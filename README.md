@@ -1,5 +1,15 @@
 # Oncology Clinical Trial Analysis
 
+## Project Highlights
+
+- 📊 5,000 synthetic oncology clinical trial records
+- 🗃️ PostgreSQL relational database
+- 🩺 16 clinical variables analyzed
+- ✅ Data quality validation completed
+- 📈 Exploratory data analysis completed
+- 💻 30+ SQL queries (and growing)
+- 📁 Fully documented GitHub portfolio project
+  
 ## Overview
 
 This project analyzes a synthetic oncology clinical trial dataset using **PostgreSQL** and **SQL**. The objective is to demonstrate real-world healthcare data analytics by exploring patient demographics, disease characteristics, treatment patterns, and clinical outcomes through structured SQL analysis.
