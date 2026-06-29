@@ -116,3 +116,27 @@ FROM oncology_clinical_trials
 GROUP BY cancer_type
 
 ORDER BY patient_count DESC;
+
+/*
+===============================================================================
+Question:
+How are cancer stages distributed within each cancer type?
+
+Purpose:
+Provides a detailed breakdown of disease stage across cancer types.
+===============================================================================
+*/
+
+SELECT
+
+cancer_type,
+
+stage,
+
+COUNT(*) AS patient_count
+
+FROM oncology_clinical_trials
+
+GROUP BY cancer_type, stage
+
+ORDER BY cancer_type, stage;
