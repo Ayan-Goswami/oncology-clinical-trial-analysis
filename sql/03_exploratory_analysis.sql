@@ -120,6 +120,28 @@ ORDER BY patient_count DESC;
 /*
 ===============================================================================
 Question:
+How are patients distributed across cancer stages?
+
+Purpose:
+Summarizes disease severity at enrollment.
+===============================================================================
+*/
+
+SELECT
+
+stage,
+
+COUNT(*) AS patient_count
+
+FROM oncology_clinical_trials
+
+GROUP BY stage
+
+ORDER BY stage;
+
+/*
+===============================================================================
+Question:
 How are cancer stages distributed within each cancer type?
 
 Purpose:
@@ -140,3 +162,4 @@ FROM oncology_clinical_trials
 GROUP BY cancer_type, stage
 
 ORDER BY cancer_type, stage;
+
