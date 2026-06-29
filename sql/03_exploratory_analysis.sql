@@ -94,3 +94,25 @@ FROM oncology_clinical_trials
 GROUP BY age_group
 
 ORDER BY age_group;
+
+/*
+===============================================================================
+Question:
+Which cancer types are most represented in the clinical trial?
+
+Purpose:
+Identifies the distribution of patients across different cancer types.
+===============================================================================
+*/
+
+SELECT
+
+cancer_type,
+
+COUNT(*) AS patient_count
+
+FROM oncology_clinical_trials
+
+GROUP BY cancer_type
+
+ORDER BY patient_count DESC;
