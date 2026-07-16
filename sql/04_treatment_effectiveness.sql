@@ -29,3 +29,20 @@ SELECT
 FROM oncology_clinical_trials
 GROUP BY treatment_arm
 ORDER BY patient_count DESC;
+
+/*
+===============================================================================
+Question:
+What are the overall treatment response outcomes?
+
+Purpose:
+Summarizes the frequency of each clinical response category.
+===============================================================================
+*/
+
+SELECT
+    best_response,
+    COUNT(*) AS patient_count
+FROM oncology_clinical_trials
+GROUP BY best_response
+ORDER BY patient_count DESC;
