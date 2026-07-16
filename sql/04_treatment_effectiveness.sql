@@ -98,3 +98,37 @@ SELECT
 FROM oncology_clinical_trials
 GROUP BY treatment_arm
 ORDER BY average_cycles DESC;
+
+/*
+===============================================================================
+Question:
+Which treatments achieved the longest progression-free survival?
+
+Purpose:
+Compares therapies using average PFS.
+===============================================================================
+*/
+
+SELECT
+    treatment_arm,
+    ROUND(AVG(pfs_weeks),2) AS average_pfs
+FROM oncology_clinical_trials
+GROUP BY treatment_arm
+ORDER BY average_pfs DESC;
+
+/*
+===============================================================================
+Question:
+Which treatments achieved the highest overall survival?
+
+Purpose:
+Ranks treatment arms according to average overall survival.
+===============================================================================
+*/
+
+SELECT
+    treatment_arm,
+    ROUND(AVG(os_weeks),2) AS average_os
+FROM oncology_clinical_trials
+GROUP BY treatment_arm
+ORDER BY average_os DESC;
