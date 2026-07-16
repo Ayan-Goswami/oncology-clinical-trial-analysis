@@ -1,0 +1,24 @@
+"treatment_arm","avg_tumor_change"
+"R-CHOP",16.62
+"Docetaxel",16.66
+"Nab-Paclitaxel + Gemcitabine",17.82
+"Cytarabine + Daunorubicin",18.15
+"Bendamustine + Rituximab",19.64
+"Osimertinib",20.24
+"Abiraterone",20.30
+"Imatinib",20.37
+"FOLFIRI + Bevacizumab",20.38
+"Enzalutamide",20.51
+"ABVD",20.76
+"Trastuzumab",20.83
+"Olaparib",21.18
+"Cetuximab",21.41
+"Bevacizumab",22.12
+"Carboplatin + Paclitaxel",22.28
+"FOLFOX",22.43
+"Venetoclax + Azacitidine",23.08
+"FOLFIRINOX",23.85
+"Palbociclib + Letrozole",23.90
+"Doxorubicin + Cyclophosphamide",24.39
+"Pembrolizumab",26.47
+"Gemcitabine",27.10
