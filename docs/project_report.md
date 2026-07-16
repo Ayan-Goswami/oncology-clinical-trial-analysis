@@ -2,28 +2,34 @@
 
 ## Project Summary
 
-This project analyzes a synthetic oncology clinical trial dataset containing **5,000 patient records** using PostgreSQL. The objective is to explore patient demographics, disease characteristics, treatment allocation, and clinical variables through SQL-based exploratory data analysis.
+This project analyzes a synthetic oncology clinical trial dataset containing **5,000 patient records** using **PostgreSQL** and **SQL**. The objective is to simulate a real-world clinical data analytics workflow by exploring patient demographics, disease characteristics, treatment effectiveness, and survival outcomes through structured SQL analysis.
+
+The project is organized into multiple analytical phases, beginning with database design and progressing toward advanced clinical reporting.
 
 ---
 
 # Phase 1: Database Setup
 
-### Completed Tasks
+## Completed Tasks
 
 - Created PostgreSQL database
-- Designed the oncology_clinical_trials table
+- Designed the `oncology_clinical_trials` table
 - Imported processed clinical trial dataset
 - Verified successful data import
 
-**Result**
+### Result
 
-- Total Records Imported: **5,000**
+| Metric | Value |
+|--------|------:|
+| Total Records Imported | 5,000 |
+
+The database was successfully created and populated without import errors.
 
 ---
 
 # Phase 2: Data Quality Assessment
 
-Several validation queries were executed to assess data integrity before analysis.
+Comprehensive validation queries were executed prior to analysis to ensure data integrity.
 
 ## Validation Checks
 
@@ -31,16 +37,16 @@ Several validation queries were executed to assess data integrity before analysi
 |--------|--------|
 | Total Records | ✅ 5,000 |
 | Duplicate Patient IDs | ✅ None Found |
-| Missing Values | ✅ No Missing Values |
+| Missing Values | ✅ None Detected |
 | Primary Key Integrity | ✅ Valid |
 
 ### Findings
 
-The dataset passed all quality checks.
+The dataset successfully passed all quality validation checks.
 
-- No duplicate patient identifiers were detected.
-- All selected variables contain complete observations.
-- The dataset is suitable for downstream statistical and clinical analysis.
+- No duplicate patient identifiers
+- No missing values across selected variables
+- All records available for downstream analysis
 
 ---
 
@@ -48,7 +54,7 @@ The dataset passed all quality checks.
 
 ## Patient Demographics
 
-### Age Distribution
+### Age Statistics
 
 | Statistic | Value |
 |-----------|------:|
@@ -58,7 +64,7 @@ The dataset passed all quality checks.
 
 ### Interpretation
 
-The study population primarily represents middle-aged and older adults, which aligns with the age groups commonly affected by many cancer types.
+The patient population primarily consists of middle-aged and older adults, consistent with the epidemiology of many adult malignancies.
 
 ---
 
@@ -71,7 +77,7 @@ The study population primarily represents middle-aged and older adults, which al
 
 ### Interpretation
 
-The study population is almost perfectly balanced between male and female participants, minimizing demographic bias related to sex.
+The dataset demonstrates an almost perfectly balanced sex distribution, minimizing demographic bias for comparative analyses.
 
 ---
 
@@ -84,7 +90,7 @@ The study population is almost perfectly balanced between male and female partic
 
 ### Interpretation
 
-Average patient age is nearly identical between male and female participants, indicating comparable age characteristics across both groups.
+Average patient age is virtually identical across both sexes, indicating comparable demographic characteristics.
 
 ---
 
@@ -100,7 +106,7 @@ Average patient age is nearly identical between male and female participants, in
 
 ### Interpretation
 
-The largest proportion of participants falls between **50 and 69 years**, representing nearly 60% of the study population. Younger patients (<40 years) constitute only a small fraction of the dataset.
+Approximately 58% of participants are between **50 and 69 years**, reflecting the age range in which many cancers are most frequently diagnosed.
 
 ---
 
@@ -119,7 +125,7 @@ The largest proportion of participants falls between **50 and 69 years**, repres
 
 ### Interpretation
 
-Breast and lung cancers account for the largest patient populations in the clinical trial, together representing approximately 39% of all enrolled participants.
+Breast and lung cancers account for the largest proportion of enrolled patients, together representing approximately 39% of the study population.
 
 ---
 
@@ -134,7 +140,7 @@ Breast and lung cancers account for the largest patient populations in the clini
 
 ### Interpretation
 
-Stage III disease is the most frequently observed stage in the dataset, followed by Stage IV, suggesting that many enrolled patients have advanced disease requiring systemic treatment.
+Stage III disease represents the largest subgroup, followed by Stage IV, suggesting that many enrolled patients have advanced disease requiring systemic treatment.
 
 ---
 
@@ -144,11 +150,11 @@ Cancer stage frequencies were evaluated within each cancer type.
 
 ### Interpretation
 
-Across nearly all cancer types, Stage III patients represent the largest subgroup, followed by Stage IV. This pattern suggests the simulated clinical trial primarily focuses on patients with locally advanced or metastatic disease.
+Across nearly all cancer types, Stage III patients formed the largest subgroup, indicating that the simulated trial primarily focuses on patients with locally advanced disease.
 
 ---
 
-## ECOG Performance Score
+## ECOG Performance Status
 
 | ECOG Score | Patients |
 |-----------:|---------:|
@@ -159,7 +165,7 @@ Across nearly all cancer types, Stage III patients represent the largest subgrou
 
 ### Interpretation
 
-Most patients have an ECOG Performance Status of **1**, indicating that the majority remain ambulatory and capable of self-care despite disease burden.
+An ECOG score of **1** was most common, indicating that most patients remain ambulatory while experiencing mild functional limitations.
 
 ---
 
@@ -173,42 +179,135 @@ Most patients have an ECOG Performance Status of **1**, indicating that the majo
 
 ### Interpretation
 
-Smoking history is evenly distributed across the study population, providing balanced representation for future analyses involving smoking-related risk factors.
+Smoking history is almost evenly distributed across the cohort, allowing future subgroup analyses without major imbalance.
 
 ---
 
 ## Treatment Arm Distribution
 
-Twenty-three treatment regimens are represented within the dataset.
+The study includes **23 distinct treatment regimens**, including chemotherapy, immunotherapy, targeted therapy, and combination therapies.
 
 ### Interpretation
 
-The clinical trial evaluates a broad range of treatment strategies including chemotherapy, targeted therapy, immunotherapy, and combination regimens, reflecting the diversity of modern oncology clinical trials.
+The broad range of treatment strategies provides a diverse dataset for comparative effectiveness analyses.
 
 ---
 
-# Key Findings
+# Phase 4: Treatment Effectiveness Analysis
 
-- Successfully imported and validated **5,000 clinical trial records**.
-- No duplicate patient IDs or missing values were identified.
-- Average participant age is **57.67 years**.
-- Sex distribution is nearly perfectly balanced.
-- Breast and lung cancers represent the largest patient populations.
-- Stage III disease is the most common stage at enrollment.
-- ECOG Performance Score of 1 is the predominant functional status.
-- Smoking history is evenly represented across participants.
-- Twenty-three distinct treatment regimens are included in the dataset.
+Treatment effectiveness was evaluated using multiple clinical outcome measures.
+
+## Analyses Performed
+
+- Treatment arm distribution
+- Best response distribution
+- Response by treatment arm
+- Average tumor size change
+- Average treatment cycles
+- Average Progression-Free Survival (PFS)
+- Average Overall Survival (OS)
+
+---
+
+## Overall Treatment Response
+
+| Response | Patients |
+|----------|---------:|
+| Partial Response | 1,687 |
+| Stable Disease | 1,361 |
+| Progressive Disease | 1,229 |
+| Complete Response | 723 |
+
+### Interpretation
+
+Partial Response was the most frequently observed treatment outcome, while Complete Response was the least common. Most patients experienced either partial tumor reduction or disease stabilization.
+
+---
+
+## Treatment Exposure
+
+Analysis of treatment cycles demonstrated that most therapies averaged between **6 and 7 treatment cycles**, indicating relatively consistent treatment exposure across study groups.
+
+---
+
+## Tumor Size Change
+
+Average tumor size change was compared across all treatment regimens.
+
+### Interpretation
+
+Treatment arms demonstrated measurable variation in average tumor size change, suggesting differences in therapeutic effectiveness.
+
+> **Note:** The dataset represents tumor size change using positive percentage values. Interpretations therefore follow the dataset conventions rather than clinical RECIST sign conventions.
+
+---
+
+## Progression-Free Survival (PFS)
+
+Average progression-free survival was calculated for each treatment arm.
+
+### Key Observation
+
+Among the evaluated therapies, **FOLFOX** demonstrated the highest average progression-free survival.
+
+---
+
+## Overall Survival (OS)
+
+Average overall survival was compared across all treatment groups.
+
+### Key Observation
+
+**Venetoclax + Azacitidine** demonstrated the highest average overall survival in this synthetic dataset.
+
+---
+
+## Overall Interpretation
+
+Treatment effectiveness varied across therapeutic regimens, with differences observed in clinical response, treatment exposure, tumor size change, progression-free survival, and overall survival. These findings demonstrate how SQL can be used to evaluate comparative treatment outcomes using routinely collected clinical trial data.
+
+---
+
+# Overall Findings
+
+- Successfully built and validated a PostgreSQL clinical trial database containing **5,000 patient records**.
+- No duplicate patient identifiers or missing values were detected.
+- Average participant age was **57.67 years**.
+- Male and female enrollment was nearly identical.
+- Breast cancer represented the largest disease subgroup.
+- Stage III disease was the most frequently observed stage.
+- ECOG Performance Score of **1** predominated.
+- Twenty-three treatment regimens were analyzed.
+- Partial Response was the most common treatment outcome.
+- FOLFOX demonstrated the highest average Progression-Free Survival.
+- Venetoclax + Azacitidine demonstrated the highest average Overall Survival.
+
+---
+
+# Project Progress
+
+| Phase | Status |
+|-------------------------------|:------:|
+| Database Setup | ✅ |
+| Data Quality Assessment | ✅ |
+| Exploratory Data Analysis | ✅ |
+| Treatment Effectiveness Analysis | ✅ |
+| Survival Analysis | ⏳ |
+| Patient Risk Analysis | ⏳ |
+| Advanced SQL Analytics | ⏳ |
+| Final Clinical Report | ⏳ |
 
 ---
 
 # Next Phase
 
-The next stage of the project will investigate:
+The remaining phases of the project will focus on:
 
-- Treatment effectiveness
-- Best response rates
-- Tumor size reduction
-- Progression-free survival (PFS)
-- Overall survival (OS)
+- Survival analysis
+- Patient risk stratification
 - Adverse event analysis
-- Advanced SQL techniques including CTEs and window functions
+- Common Table Expressions (CTEs)
+- Window Functions
+- Ranking functions
+- Advanced SQL reporting
+- Final clinical insights and conclusions
