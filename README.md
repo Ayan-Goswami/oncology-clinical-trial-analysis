@@ -8,6 +8,15 @@
 ![Records](https://img.shields.io/badge/Dataset-5000%20Patients-blue)
 
 ---
+## Project Highlights
+
+- 📊 5,000 synthetic oncology clinical trial records
+- 🗃️ PostgreSQL relational database
+- 🩺 16 clinical variables analyzed
+- 💊 23 treatment regimens evaluated
+- 📈 40+ SQL queries
+- 📄 Comprehensive documentation
+- 📸 Query outputs and screenshots included
 
 # Project Overview
 
