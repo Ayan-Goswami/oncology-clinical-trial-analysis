@@ -1,0 +1,24 @@
+"treatment_arm","patient_count","average_pfs_weeks","average_os_weeks"
+"Venetoclax + Azacitidine",154,27.42,47.70
+"FOLFIRINOX",138,26.64,47.21
+"Nab-Paclitaxel + Gemcitabine",124,26.79,47.13
+"FOLFOX",207,28.08,47.05
+"Gemcitabine",145,27.12,46.66
+"Trastuzumab",347,26.93,46.57
+"R-CHOP",153,26.06,46.51
+"Pembrolizumab",324,27.11,46.43
+"Carboplatin + Paclitaxel",419,26.40,46.40
+"Bendamustine + Rituximab",155,26.81,46.32
+"Bevacizumab",127,25.98,45.71
+"Doxorubicin + Cyclophosphamide",304,26.46,45.69
+"Palbociclib + Letrozole",354,26.35,45.69
+"Abiraterone",213,24.62,45.68
+"Osimertinib",315,25.96,45.55
+"FOLFIRI + Bevacizumab",202,26.58,45.53
+"Docetaxel",212,24.85,45.28
+"Cytarabine + Daunorubicin",182,24.74,45.15
+"Cetuximab",245,25.70,44.69
+"Olaparib",142,25.50,44.64
+"Imatinib",161,26.34,44.38
+"ABVD",170,25.53,44.32
+"Enzalutamide",207,25.36,44.18

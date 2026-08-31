@@ -1,0 +1,5 @@
+"stage","patient_count","average_pfs_weeks","average_os_weeks","survival_gap_weeks"
+"I",743,45.68,65.31,19.62
+"II",1253,34.79,54.57,19.77
+"III",1701,21.81,41.26,19.45
+"IV",1303,12.77,32.35,19.57
