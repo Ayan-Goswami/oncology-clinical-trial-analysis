@@ -268,46 +268,184 @@ Treatment effectiveness varied across therapeutic regimens, with differences obs
 
 ---
 
-# Overall Findings
+# Phase 5: Survival Analysis
 
-- Successfully built and validated a PostgreSQL clinical trial database containing **5,000 patient records**.
-- No duplicate patient identifiers or missing values were detected.
-- Average participant age was **57.67 years**.
-- Male and female enrollment was nearly identical.
-- Breast cancer represented the largest disease subgroup.
-- Stage III disease was the most frequently observed stage.
-- ECOG Performance Score of **1** predominated.
-- Twenty-three treatment regimens were analyzed.
-- Partial Response was the most common treatment outcome.
-- FOLFOX demonstrated the highest average Progression-Free Survival.
-- Venetoclax + Azacitidine demonstrated the highest average Overall Survival.
+The survival analysis phase evaluated **Progression-Free Survival (PFS)** and **Overall Survival (OS)** across demographic and clinical variables.
+
+A total of **10 SQL queries** were performed to investigate overall survival patterns and identify factors associated with differences in patient outcomes.
 
 ---
 
-# Project Progress
+## Overall Survival Statistics
 
-| Phase | Status |
-|-------------------------------|:------:|
-| Database Setup | ✅ |
-| Data Quality Assessment | ✅ |
-| Exploratory Data Analysis | ✅ |
-| Treatment Effectiveness Analysis | ✅ |
-| Survival Analysis | ⏳ |
-| Patient Risk Analysis | ⏳ |
-| Advanced SQL Analytics | ⏳ |
-| Final Clinical Report | ⏳ |
+| Metric | PFS (Weeks) | OS (Weeks) |
+|--------|------------:|-----------:|
+| Minimum | 2 | 2 |
+| Maximum | 75 | 100 |
+| Average | 26.26 | 45.85 |
+
+### Interpretation
+
+Average Overall Survival was substantially higher than average Progression-Free Survival. This pattern is expected because patients may continue living for a period following disease progression.
 
 ---
 
-# Next Phase
+## Survival by Cancer Type
 
-The remaining phases of the project will focus on:
+Average PFS and OS were compared across the eight cancer types.
 
-- Survival analysis
-- Patient risk stratification
-- Adverse event analysis
-- Common Table Expressions (CTEs)
-- Window Functions
-- Ranking functions
-- Advanced SQL reporting
-- Final clinical insights and conclusions
+| Cancer Type | Patients | Average PFS | Average OS |
+|-------------|---------:|------------:|-----------:|
+| Pancreatic | 407 | 26.86 | 46.99 |
+| Lung | 945 | 26.54 | 46.20 |
+| Breast | 1,005 | 26.58 | 45.99 |
+| Colorectal | 654 | 26.73 | 45.70 |
+| Leukemia | 497 | 26.09 | 45.69 |
+| Lymphoma | 478 | 26.11 | 45.67 |
+| Ovarian | 382 | 25.82 | 45.35 |
+| Prostate | 632 | 24.94 | 45.06 |
+
+### Interpretation
+
+Survival outcomes showed moderate variation across cancer types.
+
+- **Pancreatic cancer** demonstrated the highest average Overall Survival at **46.99 weeks**.
+- **Prostate cancer** demonstrated the lowest average Overall Survival at **45.06 weeks**.
+- Differences between cancer types were present but relatively modest within this synthetic dataset.
+
+---
+
+## Survival by Cancer Stage
+
+| Stage | Patients | Average PFS | Average OS |
+|-------|---------:|------------:|-----------:|
+| I | 743 | 45.68 | 65.31 |
+| II | 1,253 | 34.79 | 54.57 |
+| III | 1,701 | 21.81 | 41.26 |
+| IV | 1,303 | 12.77 | 32.35 |
+
+### Interpretation
+
+Cancer stage demonstrated one of the strongest associations with survival outcomes.
+
+Both Progression-Free Survival and Overall Survival declined consistently as cancer stage advanced.
+
+- Stage I patients had the longest survival outcomes.
+- Stage IV patients had the shortest survival outcomes.
+- Average PFS declined from **45.68 weeks** in Stage I to **12.77 weeks** in Stage IV.
+- Average OS declined from **65.31 weeks** in Stage I to **32.35 weeks** in Stage IV.
+
+This pattern demonstrates a strong relationship between disease severity and patient survival.
+
+---
+
+## Survival by Age Group
+
+Patients were segmented into age groups using SQL `CASE` expressions.
+
+| Age Group | Patients | Average PFS | Average OS |
+|-----------|---------:|------------:|-----------:|
+| Under 40 | 326 | 26.37 | 46.19 |
+| 40–49 | 937 | 26.93 | 46.80 |
+| 50–59 | 1,550 | 25.58 | 45.17 |
+| 60–69 | 1,355 | 26.63 | 46.32 |
+| 70+ | 832 | 26.10 | 45.11 |
+
+### Interpretation
+
+Survival outcomes varied modestly across age groups.
+
+- Patients aged **40–49 years** demonstrated the highest average PFS and OS.
+- Patients aged **70+ years** showed the lowest average OS.
+- Overall differences between age groups were relatively small compared with the differences observed across cancer stages.
+
+This analysis also demonstrated the use of conditional SQL logic to dynamically create analytical patient segments.
+
+---
+
+## Survival by ECOG Performance Status
+
+| ECOG Score | Patients | Average PFS | Average OS |
+|-----------:|---------:|------------:|-----------:|
+| 0 | 1,004 | 31.53 | 50.75 |
+| 1 | 1,959 | 27.23 | 46.84 |
+| 2 | 1,425 | 23.74 | 43.52 |
+| 3 | 612 | 20.35 | 40.00 |
+
+### Interpretation
+
+ECOG Performance Status showed a clear relationship with survival.
+
+As ECOG score increased, both PFS and OS decreased.
+
+- ECOG 0 patients had the highest survival outcomes.
+- ECOG 3 patients had the lowest survival outcomes.
+
+This indicates that better functional status was associated with improved survival in the study population.
+
+---
+
+## Survival by Smoking History
+
+| Smoking History | Patients | Average PFS | Average OS |
+|-----------------|---------:|------------:|-----------:|
+| Current | 1,642 | 26.02 | 45.87 |
+| Former | 1,722 | 26.27 | 45.83 |
+| Never | 1,636 | 26.47 | 45.83 |
+
+### Interpretation
+
+Survival outcomes were highly similar across smoking history categories.
+
+The differences in average PFS and OS were minimal, suggesting that smoking history did not demonstrate a strong association with survival outcomes within this synthetic dataset.
+
+---
+
+## Survival by Trial Completion Status
+
+| Trial Completed | Patients | Average PFS | Average OS |
+|-----------------|---------:|------------:|-----------:|
+| Yes | 1,926 | 34.59 | 54.06 |
+| No | 3,074 | 21.03 | 40.70 |
+
+### Interpretation
+
+Trial completion status demonstrated a substantial difference in survival outcomes.
+
+Patients who completed the trial showed:
+
+- Higher average PFS
+- Higher average OS
+
+The difference may reflect underlying clinical factors associated with treatment tolerance, disease progression, or patient retention.
+
+Because this is observational analysis within a synthetic dataset, the results should not be interpreted as evidence that trial completion directly causes improved survival.
+
+---
+
+## Survival by Maximum Adverse Event Grade
+
+| Adverse Event Grade | Patients | Average PFS | Average OS |
+|--------------------:|---------:|------------:|-----------:|
+| 0 | 1,512 | 26.51 | 46.27 |
+| 1 | 1,428 | 26.13 | 45.68 |
+| 2 | 1,091 | 26.19 | 46.21 |
+| 3 | 657 | 26.14 | 45.64 |
+| 4 | 312 | 26.06 | 45.77 |
+
+### Interpretation
+
+Average survival remained relatively stable across adverse event grades.
+
+The differences observed in both PFS and OS were small, suggesting that maximum adverse event grade did not show a strong independent relationship with survival in this synthetic dataset.
+
+---
+
+## Survival Gap Analysis by Cancer Stage
+
+A derived survival metric was created to measure the difference between Overall Survival and Progression-Free Survival.
+
+### Formula
+
+```text
+Survival Gap = Average OS − Average PFS
