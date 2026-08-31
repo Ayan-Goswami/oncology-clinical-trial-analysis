@@ -8,15 +8,19 @@
 ![Records](https://img.shields.io/badge/Dataset-5000%20Patients-blue)
 
 ---
-## Project Highlights
+
+# Project Highlights
 
 - 📊 5,000 synthetic oncology clinical trial records
 - 🗃️ PostgreSQL relational database
 - 🩺 16 clinical variables analyzed
 - 💊 23 treatment regimens evaluated
 - 📈 40+ SQL queries
+- 🔬 Survival outcome analysis across multiple clinical factors
 - 📄 Comprehensive documentation
 - 📸 Query outputs and screenshots included
+
+---
 
 # Project Overview
 
@@ -34,7 +38,7 @@ The analysis follows the complete lifecycle of a real-world analytics project:
 - Advanced SQL Analytics
 - Clinical Reporting
 
-Rather than simply writing SQL queries, this project demonstrates how healthcare datasets are transformed into meaningful clinical insights.
+Rather than simply writing SQL queries, this project demonstrates how healthcare datasets can be transformed into meaningful clinical insights using structured SQL analysis.
 
 ---
 
@@ -123,170 +127,3 @@ oncology-clinical-trial-analysis/
 │
 ├── README.md
 └── LICENSE
-```
-
----
-
-# Project Workflow
-
-| Phase | Status |
-|-------------------------------|:------:|
-| Database Setup | ✅ |
-| Data Quality Assessment | ✅ |
-| Exploratory Data Analysis | ✅ |
-| Treatment Effectiveness Analysis | ✅ |
-| Survival Analysis | ⏳ |
-| Patient Risk Analysis | ⏳ |
-| Advanced SQL Analytics | ⏳ |
-| Final Clinical Report | ⏳ |
-
----
-
-# Completed Analysis
-
-## Database Design
-
-- PostgreSQL database created
-- Relational table designed
-- Primary Key implemented
-- Dataset imported successfully
-
----
-
-## Data Quality Assessment
-
-Performed validation checks for:
-
-- Record count
-- Duplicate Patient IDs
-- Missing values
-- Age validation
-- Cancer type validation
-- Stage validation
-- ECOG score validation
-- Smoking history
-- Treatment arms
-- Trial completion
-
-### Results
-
-- ✅ 5,000 patient records imported
-- ✅ No duplicate Patient IDs
-- ✅ No missing values detected
-
----
-
-## Exploratory Data Analysis
-
-### Analyses Performed
-
-- Patient age statistics
-- Sex distribution
-- Cancer type distribution
-- Cancer stage distribution
-- Age group analysis
-- ECOG performance analysis
-- Smoking history analysis
-- Treatment allocation
-
-### Key Findings
-
-- Average patient age: **57.67 years**
-- Age range: **19–85 years**
-- Nearly equal male and female enrollment
-- Breast cancer was the most common cancer type
-- Stage III represented the largest disease group
-- ECOG Score 1 was most frequently observed
-- Smoking history was evenly distributed
-
----
-
-## Treatment Effectiveness Analysis
-
-### Analyses Performed
-
-- Treatment arm distribution
-- Best response analysis
-- Response by treatment arm
-- Average tumor size change
-- Average treatment cycles
-- Progression-Free Survival (PFS)
-- Overall Survival (OS)
-
-### Key Findings
-
-- 23 unique treatment regimens were evaluated.
-- Partial Response was the most common treatment outcome.
-- Most therapies averaged between 6 and 7 treatment cycles.
-- FOLFOX demonstrated the highest average Progression-Free Survival.
-- Venetoclax + Azacitidine achieved the highest average Overall Survival.
-- Treatment effectiveness varied across therapeutic regimens.
-
----
-
-# SQL Skills Demonstrated
-
-- CREATE TABLE
-- Data Import
-- Data Validation
-- Aggregate Functions
-- GROUP BY
-- ORDER BY
-- CASE Expressions
-- Multi-column Aggregation
-- Clinical Data Exploration
-- Treatment Effectiveness Analysis
-
-Upcoming:
-
-- Common Table Expressions (CTEs)
-- Window Functions
-- Ranking Functions
-- Clinical Reporting Queries
-
----
-
-# Project Documentation
-
-| Document | Description |
-|----------|-------------|
-| data_dictionary.md | Variable definitions |
-| project_report.md | Complete analytical findings |
-
----
-
-# Screenshots
-
-The repository contains screenshots illustrating:
-
-- Database creation
-- Data import
-- Validation queries
-- Exploratory analysis
-- Treatment effectiveness analysis
-
----
-
-# Current Progress
-
-**Project Completion:** **~60%**
-
-Completed:
-
-- ✅ Database Setup
-- ✅ Data Quality Assessment
-- ✅ Exploratory Data Analysis
-- ✅ Treatment Effectiveness Analysis
-
-Remaining:
-
-- Survival Analysis
-- Patient Risk Analysis
-- Advanced SQL
-- Final Report
-
----
-
-# About This Project
-
-This repository was developed as a portfolio project to demonstrate practical SQL skills within a healthcare analytics context. It reflects a structured, end-to-end workflow commonly used by clinical data analysts, from database creation and validation to clinical outcome analysis and reporting.
